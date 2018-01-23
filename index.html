@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <section>
     <!--header section -->
     <div class="row">
@@ -61,7 +62,53 @@
       </div>
     </div>
   </section>
+  <script id="post-template" type="text/x-handlebars-template">
+    <div id={{i}} class="Rtable message">
+      <div class='Rtable-cell Rtable-cell-medium Rtable-cell-content'>
+        <span class='cell-content'> {{userName}} </span>
+      </div>
+      <div class='Rtable-cell Rtable-cell-wide Rtable-cell-content'>
+        <span class='cell-content'> {{post}}</span>
+        <span><a class='comment-button' role='button'>comments</a></span>
+        <span class='comments'>
+    </span>
+        <span class='post-comment'>
+      <input id='comment{{i}}' type="text" class="form-inline" placeholder="Comment Text"></input>
+      <input id='comment-name{{i}}' type="text" class="form-inline" placeholder="Your Name"></input>
+      <button type="button" class="btn btn-primary btn-xs	submit-comment">Post Comment</button>'
+    </span>
+      </div>
+      <div id='qualCell{{i}}' class='Rtable-cell Rtable-cell-content Rtable-cell-medium'>
+        <button id='upBtn{{i}}' class='btn btn-xs btn-default quality-up'>
+    <span class='glyphicon glyphicon-thumbs-up'></span>
+  </button>
+        <button id='dwnBtn{{i}}' class='btn btn-default btn-xs quality-down'>
+      <span class='glyphicon glyphicon-thumbs-down'></span>
+    </button>
+        <span class='q-content'>
+      <p></p>
+      </span>
+      </div>
+      <div class='Rtable-cell Rtable-cell-narrow Rtable-cell-empty'>
+        <button type='button' id='trash{{i}}' class='btn btn-default btn-xs pull-left trash'>
+      <span class='glyphicon glyphicon-trash'></span>
+    </button>
+        <button type='button' id='edit{{i}}' class='btn btn-default btn-xs edit'>
+      <span class='glyphicon glyphicon-pencil'></span>
+    </button>
+      </div>
+    </div>
+  </script>
+  <script id="comment-template" type="text/x-handlebars-template">
+    <span class='comments'>
+    <span> {{commentContent}} </span><strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted by:</strong> &nbsp; {{commentName}} &nbsp;&nbsp;&nbsp;
+    <a class='delete-comment'><i class='fa fa-times text-primary' aria-hidden='true'></i></a> &nbsp;
+    <a class='edit-comment'><i class='fa fa-pencil text-primary' aria-hidden='true'></i></a>
+  </span>
+  </script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js">
+  </script>
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
   <script src="main.js"></script>
